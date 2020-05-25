@@ -1,3 +1,3 @@
 class Salary < ApplicationRecord
-	has_many :employees
+	belong_to :employees
 end
