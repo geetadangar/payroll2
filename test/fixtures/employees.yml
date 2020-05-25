@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  designation: MyString
+  department: MyString
+  PAN: MyString
+  PF: MyString
+
+two:
+  name: MyString
+  designation: MyString
+  department: MyString
+  PAN: MyString
+  PF: MyString
