@@ -1,25 +1,40 @@
-<h1>hello</h1>
-<%= form_with(model: company, local: true) do |form| %>
-<%# form_for(@company,:url => company_path(@company), :method => 'post')do |f| %>
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% company.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-</p>
-<p>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-</p>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Company</h1>
+<%= link_to 'Download as Excel',company_path(format: :xlsx) %>
+<%= link_to 'Upload from Excel',new_company_import_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>cin</th>
+      <th>phone</th>
+      <th>website</th>
+      <th>Email_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.address %></td>
+        <td><%= company.cin %></td>
+        <td><%= company.phone %></td>  
+        <td><%= company.website %></td> 
+        <td><%= company.Email_id %></td>  
+        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to 'Edit', edit_company_path(company) %></td>
+        <td><td><%= button_to 'Delete', company_path(company), method: :delete, data: {confirm: "Are you sure?"} %></td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_company_path %>
+

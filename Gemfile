@@ -21,7 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'pdfkit', '0.8.4.2'
+gem 'roo', '~> 2.8'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.5.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
