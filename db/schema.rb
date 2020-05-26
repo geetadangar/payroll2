@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_130145) do
+ActiveRecord::Schema.define(version: 2020_05_26_053028) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_05_25_130145) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "employeesalaries", force: :cascade do |t|
+    t.integer "employee_id", null: false
+    t.integer "salary_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_employeesalaries_on_employee_id"
+    t.index ["salary_id"], name: "index_employeesalaries_on_salary_id"
+  end
+
   create_table "payroll1s", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,4 +58,6 @@ ActiveRecord::Schema.define(version: 2020_05_25_130145) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "employeesalaries", "employees"
+  add_foreign_key "employeesalaries", "salaries"
 end
