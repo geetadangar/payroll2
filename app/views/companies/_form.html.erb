@@ -1,0 +1,29 @@
+<%= form_with(url: @url, method: @method) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, :value => @company.name %>
+  </div>
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, :value => @company.address %>
+  </div>
+  <div class="field">
+    <%= form.label :cin %>
+    <%= form.text_field :cin, :value => @company.cin %>
+  </div>
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, :value => @company.phone %>
+  </div>
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, :value => @company.website %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :Email_id, :value => @company.Email_id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Company</h1>
+<%= link_to 'Add New Company', new_company_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>cin</th>
+      <th>phone</th>
+      <th>website</th>
+      <th>Email_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.address %></td>
+        <td><%= company.cin %></td>
+        <td><%= company.phone %></td>
+        <td><%= company.website %></td>
+        <td><%= company.Email_id %></td>
+        <td><%= button_to 'Show', company_path(company), method: :get %></td>
+        <td><%= button_to 'Edit', edit_company_path(company.try(:id)), method: :get %></td>
+        <td><%= button_to 'Destroy', company_path(company), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
