@@ -1,8 +1,7 @@
 class Salary < ApplicationRecord
-	# belong_to :employees
-	# has_many :employees
+	
 	has_many :employeesalaries
-	has_many :employee, through: :employeesalaries
+	has_one :employee, through: :employeesalary
 
-	# has_many :employees, through: :employees_salaries
+	
 end
