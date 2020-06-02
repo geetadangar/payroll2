@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Upload excel file', new_import_path %>
+<%= form_tag 'companies_path', multipart: true do %>
+  <label for="file">File to Upload</label> <%= file_field_tag "file" %>
+  <%# form.hidden_field :company_id, :value => @company.id%>
+  <%# form.hidden_field :company_id, :value => @company.id%>
+  <%= submit_tag %>
+<% end %>
+<%# link_to 'Upload excel file', new_import_path %>
 
 <p>
   <strong>name:</strong>

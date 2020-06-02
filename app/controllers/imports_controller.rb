@@ -6,6 +6,7 @@ class ImportsController < ApplicationController
 
   def create
     @payrollimport = PayrollImport.new(params[:import_file])
+    # raise params.inspect
     if @payrollimport.save
       redirect_to imports_path
     else

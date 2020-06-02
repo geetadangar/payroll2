@@ -1,38 +1,27 @@
-<%= form_with url: employee_index_path, method: :post do |form| %>
-  
-  <p>
+
+
+<%= form_with(url: @url, method: @method) do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :value => @employee.name %>
   </div>
-  <p>
-  <p>
   <div class="field">
     <%= form.label :designation %>
-    <%= form.text_field :designation %>
+    <%= form.text_field :address, :value => @employee.designation %>
   </div>
-  <p>   
- <p>
   <div class="field">
     <%= form.label :department %>
-    <%= form.text_field :department %>
+    <%= form.text_field :department, :value => @employee.department %>
   </div>
-  <p>   
-  <p>
   <div class="field">
     <%= form.label :PAN %>
-    <%= form.text_field :PAN %>
+    <%= form.text_field :PAN, :value => @employee.PAN %>
   </div>
-  <p> 
-  <p>
   <div class="field">
     <%= form.label :PF %>
-    <%= form.text_field :PF %>
+    <%= form.text_field :website, :value => @employee.PF %>
   </div>
-  <p>   
-
   <div class="actions">
     <%= form.submit %>
   </div>
-</p>
 <% end %>

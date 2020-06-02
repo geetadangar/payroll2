@@ -26,13 +26,13 @@ class PayrollImport < ApplicationRecord
   end
 
   def load_imported_salaries
+    # raise params.inspect  
     spreadsheet = open_spreadsheet
     header = spreadsheet.row(2)
     (3..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       salary = Salary.new
       salary.salary_details = row.to_hash
-      salary
   end
 
       # row = Hash[[header, spreadsheet.row(i)].transpose]

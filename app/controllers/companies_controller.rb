@@ -23,6 +23,7 @@ class CompaniesController < ApplicationController
   end
 
 	def show
+   @company = Company.find_by_id(params[:id])
 	end
 
   def edit
@@ -51,6 +52,7 @@ class CompaniesController < ApplicationController
   private
 
     def set_company
+      # raise params.inspect
       @company = Company.find(params[:id])
     end
 
