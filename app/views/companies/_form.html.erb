@@ -1,7 +1,7 @@
 <%= form_with(url: @url, method: @method) do |form| %>
   <div class="field">
      <%# form.hidden_field :company_id, :value => @company.id%>
-     <%= form.hidden_field :company_id, :value => @company.id%>
+    <%= form.hidden_field :id, :value => @company.id%>
     <%= form.label :name %>
     <%= form.text_field :name, :value => @company.name %>
   </div>
