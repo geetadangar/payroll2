@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_045317) do
+ActiveRecord::Schema.define(version: 2020_06_05_090518) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -51,10 +51,11 @@ ActiveRecord::Schema.define(version: 2020_05_27_045317) do
   create_table "payroll_imports", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "file"
   end
 
   create_table "salaries", force: :cascade do |t|
-    t.string "salary_details"
+    t.text "salary_details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
