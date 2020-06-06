@@ -1,6 +1,8 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Import Items From Excel</h1>
+
 
 <p>
 Note: Only import spreadsheets that were previously downloaded from this
@@ -17,14 +19,22 @@ Note: Only import spreadsheets that were previously downloaded from this
 <%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
   <% if @payrollimport.errors.any? %>
     <%= pluralize(@payrollimport.errors.count, "error") %> prevented us from
+
     importing your spreadsheet. Please update your spreadsheet and try agin.
     <ul>
-      <% @payrollimport.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+      <%# @payrollimport.errors.full_messages.each do |msg| %>
+        <li><%# msg %></li>
+      <%# end %>
     </ul>
-  <% end %>
+  <% #end %>
 
-  <%= f.file_field :file %>
-  <%= f.submit "Import File" %>
-<% end %>
+  <%# f.file_field :file %>
+  <%# f.submit "Import File" %>
+<%# end %>
+ -->
+
+<h1>New import</h1>
+
+<%= render 'form', import: @import %>
+
+<%= link_to 'Back', imports_path %>

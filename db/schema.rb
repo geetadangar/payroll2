@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_090518) do
     t.integer "salary_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "for_month"
     t.datetime "formonth"
     t.index ["employee_id"], name: "index_employeesalaries_on_employee_id"
     t.index ["salary_id"], name: "index_employeesalaries_on_salary_id"

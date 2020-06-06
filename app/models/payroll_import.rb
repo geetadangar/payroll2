@@ -51,6 +51,7 @@ class PayrollImport < ApplicationRecord
     # end
 
 
+
   # def self.import(file)
   #   spreadsheet = open_spreadsheet(file)
   #   header = spreadsheet.row(2)
@@ -70,6 +71,7 @@ class PayrollImport < ApplicationRecord
   #   else raise "Unknown file type: #{file.original_filename}"
   #   end
   # end
+
 
 
       # row = Hash[[header, spreadsheet.row(i)].transpose]

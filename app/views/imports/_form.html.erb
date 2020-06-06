@@ -1,0 +1,27 @@
+<%= form_with(url: @url, method: @method) do |form| %>
+<%# form_with(model: import, method: :post, local: true, method: :post) do |form| %>
+  <div class="field">
+   <%= form.label :select_company%>
+   <%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+   <%= select_tag "date", options_from_collection_for_select(@company, "created_at", "created_at") %>
+   <%# select_tag "date", options_from_collection_for_select(@company, "created_at") %>
+   <%# select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+   </div>
+   <br/>
+   <div class="field">
+   	<%= form_tag 'imports_path', multipart: true do %>
+  <label for="file">File to Upload</label> <%= file_field_tag "file" %>
+  <%= submit_tag %>
+<% end %>
+  </div>
+  <br />
+<div class="field">
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
+<%# @company.each do |c| %>
+   <%# select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %>
+    <%# l c.created_at.to_date, format: :short %>
+<%# end %>

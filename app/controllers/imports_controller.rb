@@ -1,6 +1,12 @@
 class ImportsController < ApplicationController
 
+
+  def index
+  	@company =Company.all
+  	end
   def new
+  	@company =Company.all
+  	# @import =Imports.new
     @payrollimport = PayrollImport.new
   end
 
@@ -38,3 +44,4 @@ class ImportsController < ApplicationController
   end
 
 end
+
