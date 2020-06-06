@@ -1,4 +1,8 @@
-<!-- <h1>Import Items From Excel</h1>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Import Items From Excel</h1>
+
 
 <p>
 Note: Only import spreadsheets that were previously downloaded from this
@@ -12,9 +16,10 @@ Note: Only import spreadsheets that were previously downloaded from this
 </ul>
 
 <h5>Select File</h5>
-<%# form_with(url: imports_path, method: :post) do |f| %>
-  <%# if @payrollimport.errors.any? %>
-    <%# pluralize(@payrollimport.errors.count, "error") %> prevented us from
+<%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
+  <% if @payrollimport.errors.any? %>
+    <%= pluralize(@payrollimport.errors.count, "error") %> prevented us from
+
     importing your spreadsheet. Please update your spreadsheet and try agin.
     <ul>
       <%# @payrollimport.errors.full_messages.each do |msg| %>

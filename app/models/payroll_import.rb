@@ -2,17 +2,46 @@ class PayrollImport < ApplicationRecord
   include ActiveModel::Model
   require 'roo'
 
-    attr_accessor :file
+    # attr_accessor :file
 
     # def initialize(attributes={})
-    #   attributes.each { |name, value| send("#{name}=", value) }
+      # attributes.each { |name, value| send("#{name}=", value) }
     # end
 
     # def persisted?
-    #   false
+      # false
     # end
 
-    # def open_spreadsheet
+    # def save
+      # if imported_salaries.map(&:valid?).all?
+        # imported_salaries.each(&:save!)
+        # true
+      # else
+        # imported_salaries.each_with_index do |salary, index|
+          # salary.errors.full_messages.each do |msg|
+            # errors.add :base, "Row #{index + 6}: #{msg}"
+          # end
+        # end
+        # false
+      # end
+    # end
+
+    # def imported_salaries
+      # @imported_salaries ||= load_imported_salaries
+    # end
+
+    # def self.import(file)
+    #   spreadsheet = open_spreadsheet(file)
+    #   header = spreadsheet.row(2)
+    #   (3..spreadsheet.last_row).map do |i|
+    #     row = Hash[[header, spreadsheet.row(i)].transpose]
+    #     salary = find_by_id(row["id"]) || Salary.new
+    #     salary.attributes = row.to_hash.slice(*Salary.accesible_attributes)
+    #     salary.save!
+    #   end
+    # end
+
+    # def self.open_spreadsheet(file)
     #   case File.extname(file.original_filename)
     #   when ".csv" then Csv.new(file.path, nil, :ignore)
     #   when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
@@ -21,19 +50,29 @@ class PayrollImport < ApplicationRecord
     #   end
     # end
 
-  def open_spreadsheet
-    Roo::Excelx.new('./sample_payroll.xlsx', {:expand_merged_ranges => true})
-  end
 
-  def load_imported_salaries
-    # raise params.inspect  
-    spreadsheet = open_spreadsheet
-    header = spreadsheet.row(2)
-    (3..spreadsheet.last_row).map do |i|
-      row = Hash[[header, spreadsheet.row(i)].transpose]
-      salary = Salary.new
-      salary.salary_details = row.to_hash
-  end
+
+  # def self.import(file)
+  #   spreadsheet = open_spreadsheet(file)
+  #   header = spreadsheet.row(2)
+  #   (3..spreadsheet.last_row).each do |i|
+  #     row = Hash[[header, spreadsheet.row(i)].transpose]
+  #     salary = find_by_id(row["id"]) || new
+  #     salary.attributes = row.to_hash.slice(*accesible_attributes)
+  #     salary.save!
+  #   end
+  # end
+
+  # def self.open_spreadsheet(file)
+  #   case File.extname(file.original_filename)
+  #   # when ".csv" then Csv.new(file.path, nil, :ignore)
+  #   when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
+  #   when ".xlsx" then Roo::Excelx.new(file.path)
+  #   else raise "Unknown file type: #{file.original_filename}"
+  #   end
+  # end
+
+
 
       # row = Hash[[header, spreadsheet.row(i)].transpose]
       # #   item = Item.find_by_id(row["id"]) || Item.new
@@ -42,29 +81,14 @@ class PayrollImport < ApplicationRecord
       # end
       # return salary, header
 
-    end
+    # end
 
-  def imported_salaries
-    @imported_salaries ||= load_imported_salaries
-  end
+
 
     # def payroll
     #   @payroll ||= Payroll.new({'company': Company.new, 'for_month': (DateTime.now-1.month).strftime('%B, %Y'), 'salaries': imported_salaries})
     # end
 
-  def save
-    if imported_salaries.map(&:valid?).all?
-      imported_salaries.each(&:save!)
-      true
-    else
-      imported_salaries.each_with_index do |salary, index|
-      salary.errors.full_messages.each do |msg|
-        errors.add :base, "Row #{index + 6}: #{msg}"
-      end
-    end
-      false
-      end
-    end
 
     # def index
     #     # @xlsx = Roo::Spreadsheet.open('./sample_payroll.xlsx')
