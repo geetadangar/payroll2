@@ -1,12 +1,11 @@
 class ImportsController < ApplicationController
 
+  # def index
+  	# @company =Company.all
+  # end
 
-  def index
-  	@company =Company.all
-  	end
   def new
-  	@company =Company.all
-  	# @import =Imports.new
+  	# @company =Company.all
     @payrollimport = PayrollImport.new
   end
 
@@ -17,13 +16,9 @@ class ImportsController < ApplicationController
 
   def import(file)
     spreadsheet = open_spreadsheet(file)
-    header = spreadsheet.row(1)
-    (2..spreadsheet.last_row).map do |i|
-      row = Hash[[header, spreadsheet.row(i)]].transpose
-      # row = ["jhj" => "ghfgh"]
-      # row = Hash[["#{header}", "#{spreadsheet.row(i)}"].transpose]
-      # row = {"id"=>"3", "salary_details"=>"10000"}
-      puts "\n\n\n\n\n\n=====================================#{row.inspect}====================================="
+    header = spreadsheet.row(2)
+    (3..spreadsheet.last_row).map do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
       Salary.file_save(row)
     end
   end
@@ -44,4 +39,3 @@ class ImportsController < ApplicationController
   end
 
 end
-

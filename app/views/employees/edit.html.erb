@@ -1,0 +1,7 @@
+<h1>Editing company</h1>
+<% @method = "Patch" %>
+<% @url = company_employee_path(params[:company_id]) %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', company_employees_path(params[:company_id]) %>

@@ -1,0 +1,7 @@
+<h1>New employee</h1>
+<% @method = "Post" %>
+<% @url = company_employees_path(params[:company_id]) %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', company_employees_path(params[:company_id]) %>

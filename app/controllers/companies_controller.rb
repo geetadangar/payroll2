@@ -52,7 +52,6 @@ class CompaniesController < ApplicationController
   private
 
     def set_company
-      # raise params.inspect
       @company = Company.find(params[:id])
     end
 
