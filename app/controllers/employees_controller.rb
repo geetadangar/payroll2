@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy]
-  before_action :set_company, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_employee, only: [:edit, :update, :destroy]
+  before_action :set_company, only: [:index, :edit, :update, :destroy]
 
   def index
    @employees = @company.employees
@@ -22,10 +22,6 @@ class EmployeesController < ApplicationController
       end
     end
   end
-
-	# def show
-	  # @employee = Employee.find_by_id(params[:id])
-	# end
 
 	def edit
     @employee = Employee.find(params[:id])
@@ -51,6 +47,13 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def send_email
+    @employee = Employee.find(params[:id])
+    @email =  @employee.email
+    # EmployeeMailer.send_pdf_email(@employee,@email).deliver_now!
+    render 'employee_mailer/send_pdf_email'
+  end
+
   private
 
     def set_company
@@ -62,6 +65,6 @@ class EmployeesController < ApplicationController
     end
 
     def employee_params
-       params.permit(:name, :designation, :department, :PAN, :PF, :company_id)
+       params.permit(:name, :designation, :department, :PAN, :PF, :company_id, :email)
     end
 end

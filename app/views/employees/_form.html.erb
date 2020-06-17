@@ -19,6 +19,10 @@
     <%= form.label :PF %>
     <%= form.text_field :PF, :value => @employee.PF %>
   </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, :value => @employee.email %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
