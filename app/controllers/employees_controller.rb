@@ -50,8 +50,8 @@ class EmployeesController < ApplicationController
   def send_email
     @employee = Employee.find(params[:id])
     @email =  @employee.email
-    # EmployeeMailer.send_pdf_email(@employee,@email).deliver_now!
-    render 'employee_mailer/send_pdf_email'
+    EmployeeMailer.send_pdf_email(@employee,@email).deliver_now!
+    # render 'employee_mailer/send_pdf_email'
   end
 
   private
