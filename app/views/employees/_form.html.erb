@@ -5,19 +5,23 @@
   </div>
   <div class="field">
     <%= form.label :designation %>
-    <%= form.text_field :address, :value => @employee.designation %>
+    <%= form.text_field :designation, :value => @employee.designation %>
   </div>
   <div class="field">
     <%= form.label :department %>
-    <%= form.text_field :department, :value => @employee.department %>
+    <%= form.text_field :department, :value => @employee.department  %>
   </div>
   <div class="field">
     <%= form.label :PAN %>
-    <%= form.text_field :PAN, :value => @employee.PAN %>
+    <%= form.text_field :PAN, :value => @employee.PAN  %>
   </div>
   <div class="field">
     <%= form.label :PF %>
-    <%= form.text_field :website, :value => @employee.PF %>
+    <%= form.text_field :PF, :value => @employee.PF %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, :value => @employee.email %>
   </div>
   <div class="actions">
     <%= form.submit %>

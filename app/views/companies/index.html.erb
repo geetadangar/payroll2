@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Company</h1>
-<%= link_to 'Add New Company', new_company_path %>
+<%= link_to 'Upload excel file', new_import_path %>
 
 <table>
   <thead>
@@ -27,8 +27,10 @@
         <td><%= company.Email_id %></td>
         <td><%= button_to 'Show', company_path(company), method: :get %></td>
         <td><%= button_to 'Edit', edit_company_path(company.try(:id)), method: :get %></td>
-        <td><%= button_to 'Destroy', company_path(company), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', company_path(company), method: :delete %></td>
+        <td><%= button_to 'Employees', company_employees_path(company.try(:id)), method: :get %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'Add New Company', new_company_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_090518) do
+ActiveRecord::Schema.define(version: 2020_06_17_045450) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2020_06_05_090518) do
     t.string "PF"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_id"
+    t.string "email"
+    t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
   create_table "employeesalaries", force: :cascade do |t|
@@ -38,7 +41,6 @@ ActiveRecord::Schema.define(version: 2020_06_05_090518) do
     t.integer "salary_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "for_month"
     t.datetime "formonth"
     t.index ["employee_id"], name: "index_employeesalaries_on_employee_id"
     t.index ["salary_id"], name: "index_employeesalaries_on_salary_id"
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_090518) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "employees", "companies"
   add_foreign_key "employeesalaries", "employees"
   add_foreign_key "employeesalaries", "salaries"
 end

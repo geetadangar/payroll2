@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employees</h1>
+<%= link_to 'Add New employee', new_company_employee_path(params[:company_id]) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>designation</th>
+      <th>department</th>
+      <th>PAN</th>
+      <th>PF</th>
+      <th>email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.designation %></td>
+        <td><%= employee.department %></td>
+        <td><%= employee.PAN %></td>
+        <td><%= employee.PF %></td>
+        <td><%= employee.email %></td>
+        <td><%= button_to 'Edit', edit_company_employee_path(@company.id, employee.id), method: :get %></td>
+        <td><%= button_to 'Delete', company_employee_path(@company.id, employee.id), method: :delete %></td>
+        <td><%= button_to 'Download a PDF', export_path(@company.id), method: :get %></td>
+        <td><%= button_to 'send Email', send_email_path(employee.id), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', companies_path %>
