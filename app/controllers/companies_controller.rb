@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def new
+    #git
     @company = Company.new
   end
 
