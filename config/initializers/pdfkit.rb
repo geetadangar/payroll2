@@ -2,7 +2,7 @@
 # Rails::Initializer.run do |config|
   # config.middleware.use PDFKit::Middleware
   PDFKit.configure do |config|
-    config.wkhtmltopdf = '/wkhtmltopdf'
+    # config.wkhtmltopdf = '/wkhtmltopdf'
   # config.default_options = {
     # :page_size => 'Legal',
     # :print_media_type => true

@@ -10,11 +10,11 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: nikhil
-  password:
+  username: root
+  password: geeta
   host: localhost
 development:
   <<: *default
@@ -49,5 +49,5 @@ test:
 production:
   <<: *default
   database: payslip_production
-  username: payslip
+  username: root
   password: <%= ENV['payslip_DATABASE_PASSWORD'] %>

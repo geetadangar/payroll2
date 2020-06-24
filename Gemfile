@@ -8,7 +8,11 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 # Use pg as the database for Active Record
-gem 'pg'
+# gem 'pg'
+#mysql gem
+# gem 'mysql', '~> 2.9', '>= 2.9.1'
+gem 'mysql2'
+# gem 'mysql2', '~>0.5.2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -26,7 +30,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pdfkit', '0.8.4.2'
 gem 'roo', '~> 2.8'
 # gem 'wkhtmltopdf-binary', '~> 0.12.6'
-gem 'wkhtmltopdf-binary-edge', '~> 0.12.5.1'
+# gem 'wkhtmltopdf', '~> 0.12.5.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
