@@ -28,7 +28,7 @@
         <td><%= button_to 'Show', company_path(company), method: :get %></td>
         <td><%= button_to 'Edit', edit_company_path(company.try(:id)), method: :get %></td>
         <td><%= button_to 'Destroy', company_path(company), method: :delete %></td>
-        <td><%= button_to 'Employees', company_employees_path(company.try(:id)), method: :get %></td>
+        <td><%# button_to 'Employees', company_employees_path(company.try(:id)), method: :get %></td>
       </tr>
     <% end %>
   </tbody>

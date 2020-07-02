@@ -1,8 +1,8 @@
 class ImportsController < ApplicationController
 
-  # def index
-  	# @company =Company.all
-  # end
+  def index
+  	@company =Company.all
+  end
 
   def new
   	# @company =Company.all
@@ -15,10 +15,10 @@ class ImportsController < ApplicationController
   end
 
   # def show
-    # raise params.inspect
-    # @company = Company.find_by_id(params[:company_id])
-    # raise @company.inspect
-    # @employees = @company.employees
+  #   raise params.inspect
+  #   @company = Company.find_by_id(params[:company_id])
+  #   raise @company.inspect
+  #   # @employees = @company.employees
   # end
 
   def import(file)
