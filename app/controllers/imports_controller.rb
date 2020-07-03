@@ -11,7 +11,8 @@ class ImportsController < ApplicationController
 
   def create
     import(file_params)
-    redirect_to new_import_path, notice: "file imported succesfully."
+    # redirect_to new_import_path, notice: "file imported succesfully."
+    redirect_to salaries_path, notice: "file imported succesfully."
   end
 
   # def show
@@ -38,6 +39,24 @@ class ImportsController < ApplicationController
     else raise "Unknown file type: #{params[:file].original_filename}"
     end
   end
+
+# workbook = Roo::Spreadsheet.open './sample_excel_files/xlsx_500_rows.xlsx'
+# worksheets = workbook.sheets
+# puts "Found #{worksheets.count} worksheets"
+
+# worksheets.each do |worksheet|
+#   puts "Reading: #{worksheet}"
+#   num_rows = 0
+#   workbook.sheet(worksheet).each_row_streaming do |row|
+#     row_cells = row.map { |cell| cell.value }
+#     num_rows += 1
+#   end
+#   puts "Read #{num_rows} rows" 
+
+
+
+
+
 
   def export
     # id = Company.find_by_id(params[:id])

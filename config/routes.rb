@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/export(/:id)", to: "imports#export", as: :export
   post "/send_email(/:id)", to: "employees#send_email", as: :send_email
   get 'employees', to: 'employees#index'
+  resources :salaries
 
   resources :companies do
     resources :employees
