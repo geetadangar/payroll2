@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :imports, only: [:new, :create]
   get "/export(/:id)", to: "imports#export", as: :export
   post "/send_email(/:id)", to: "employees#send_email", as: :send_email
+  get 'employees', to: 'employees#index'
+
   resources :companies do
     resources :employees
   end

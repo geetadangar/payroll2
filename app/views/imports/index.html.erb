@@ -7,6 +7,7 @@
       <th>select company</th>
       <%# raise @company.inspect %>
       <th><%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %></th>
+      <th> <%= select_tag "date", options_from_collection_for_select(@company, "created_at", "created_at") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,10 +15,10 @@
   <tbody>
     <% @company.each do |company| %>
       <tr>
-        <td><%= company.name %></td>
+        <td><%# company.name %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New ', new_import_path %>
+<%= link_to 'upload excel file ', new_import_path %>
 

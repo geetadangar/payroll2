@@ -3,7 +3,8 @@ class EmployeesController < ApplicationController
   before_action :set_company, only: [:index, :edit, :update, :destroy]
 
   def index
-   @employees = @company.employees
+    @employees = Employee.all
+   # @employees = @company.employees
   end
 
   def new
