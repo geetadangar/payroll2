@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pdfkit', '0.8.4.2'
 gem 'roo', '~> 2.8'
-# gem 'wkhtmltopdf-binary', '~> 0.12.6'
+gem 'wkhtmltopdf-binary'
 # gem 'wkhtmltopdf', '~> 0.12.5.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -63,12 +63,18 @@ class ImportsController < ApplicationController
     # raise id.inspect
     # kit = PDFKit.new('http://localhost:3000/companies/#{id}/employees')
     # kit = PDFKit.new(File.new('employees/index'))
-    rendered_html = render_to_string("imports/show")
-    kit = PDFKit.new(rendered_html)
-    # kit = kit.to_file('employees/index')
-    pdf = kit.to_pdf
+    
+    # rendered_html = render_to_string("imports/show")
+    # kit = PDFKit.new(rendered_html)
+    # # kit = kit.to_file('employees/index')
+    # pdf = kit.to_pdf
+    # file = kit.to_file('./payslip.pdf')
+    # send_file file, type: 'application/pdf'
+
+    kit = PDFKit.new('http://localhost:3000')
     file = kit.to_file('./payslip.pdf')
-    send_file file, type: 'application/pdf'
+    send_file file
+    # render :file => file
   end
 
   private
