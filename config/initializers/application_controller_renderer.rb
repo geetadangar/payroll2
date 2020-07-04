@@ -6,3 +6,6 @@
 #     https: false
 #   )
 # end
+# PDFKit.configure do |config|
+#   config.wkhtmltopdf = 'which wkhtmltopdf'
+# end

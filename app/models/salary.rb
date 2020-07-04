@@ -4,7 +4,9 @@ class Salary < ApplicationRecord
 
 	has_many :employeesalaries
 	has_one :employee, through: :employeesalary
-
+	
+	require 'pdfkit'
+	use PDFKit::Middleware
 	def self.file_save(row)
 		salary = Salary.new
 		salary.salary_details = row
