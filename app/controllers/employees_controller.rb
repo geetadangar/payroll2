@@ -47,12 +47,12 @@ class EmployeesController < ApplicationController
     end
   end
 
-  def send_email
-    @employee = Employee.find(params[:id])
-    @email =  @employee.email
-    EmployeeMailer.send_pdf_email(@employee,@email).deliver_now!
+  # def send_email
+    # @employee = Employee.find(params[:id])
+    # @email =  @employee.email
+    # EmployeeMailer.send_pdf_email(@employee,@email).deliver_now!
     # render 'employee_mailer/send_pdf_email'
-  end
+  # end
 
   private
 

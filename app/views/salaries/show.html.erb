@@ -1,0 +1,33 @@
+<body>
+  <div style="width: 100%; float: left; margin-top: 3rem;">
+    <h1 class="ibcl_company_name text-center mt-4">COMPLITECH SOLUTIONS PRIVATE LIMITED</h1>
+    <h6 class="ibcl_company_name text-center">Parul Nagar Society, Ahmedabad, Gujarat - 380061  CIN:U72900GJ2007PTC051398</h4>
+    <h4 class="ibcl_company_name text-center">Payslip</h6>
+  </div>
+  <table border="1">
+    <tbody>
+      <tr><td>Name:<%= @salary.salary_details["Name"] %></td>
+      </tr></br>
+      <tr><td>Designation:<%= @salary.salary_details["Designation"] %></td></tr></br>
+      <tr><td>department:<%= @salary.salary_details["Department"] %></td></tr></br>
+      <tr><td>location:<%= @salary.salary_details["location"] %></td></tr></br>
+      <td rowspan="3"></td>
+      <tr><td>Employee id:<%= @salary.salary_details["Employee ID"] %></td></tr></br>
+      <tr><td>Bank no:<%= @salary.salary_details["Bank A/C No"] %></td></tr></br>
+      <tr><td>PAN:<%= @salary.salary_details["PAN"] %></td></tr></br>
+      <tr><td>PF Number:<%= @salary.salary_details["PF Number"] %></td></tr></br>
+      <tr><td>Present Days:<%= @salary.salary_details["Present Days"] %></td></tr></br>
+      <tr><td>BAsic for PF:<%= @salary.salary_details["Basic for PF"] %></td></tr></br>
+      <tr><td>Other Basic:<%= @salary.salary_details["Other Basic"] %></td></tr></br>
+      <tr><td>HRA:<%= @salary.salary_details["HRA"] %></td></tr></br>
+      <tr><td>Incentives:<%= @salary.salary_details["Incentives"] %></td></tr></br>
+      <tr><td>Leave Encashment:<%= @salary.salary_details["Leave Encashment"] %></td></tr></br>
+      <tr><td>LIC:<%= @salary.salary_details["LIC"] %></td></tr></br>
+      <tr><td>Gross Total:<%= @salary.salary_details["Gross Total"] %></td></tr></br>
+      <tr><td>PF:<%= @salary.salary_details["PF"] %></td></tr></br>
+      <tr><td>ESI:<%= @salary.salary_details["ESI"] %></td></tr></br>
+      <tr><td>Total Deductions:<%= @salary.salary_details["Total Deductions"] %></td></tr></br>
+      <tr><td>Net Amount:<%= @salary.salary_details["Net Amount"] %></td></tr>
+    </tbody>
+  </table>
+</body>

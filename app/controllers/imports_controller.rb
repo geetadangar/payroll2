@@ -71,11 +71,30 @@ class ImportsController < ApplicationController
     # file = kit.to_file('./payslip.pdf')
     # send_file file, type: 'application/pdf'
 
-    kit = PDFKit.new('http://localhost:3000')
+    # kit = PDFKit.new('http://localhost:3000/salaries')
+    # file = kit.to_file('./payslip1.pdf')
+    # send_file file
+
+
+    kit = PDFKit.new(salary_url, page_size: 'A4')
+    pdf = kit.to_pdf
     file = kit.to_file('./payslip.pdf')
-    send_file file
+    send_file file, type: 'application/pdf'
     # render :file => file
+    # rendered_html = render_to_string("imports/show")
+    # kit = PDFKit.new(salaries_url)
+    # # kit = kit.to_file('employees/index')
+    # pdf = kit.to_pdf
+    # file = kit.to_file('./payslip.pdf')
+    # send_file file, type: 'application/pdf'
   end
+  def send_email
+  @salar = Salary.find(params[:id])
+  pdf = render_to_string :pdf => 'payslip'
+  Sendpdf.send_report(@Salary, pdf).deliver
+  redirect_to salary_path(@salary)
+  flash[:notice] = 'Email has been sent!'
+end
 
   private
 

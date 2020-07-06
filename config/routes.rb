@@ -10,9 +10,10 @@
 Rails.application.routes.draw do
   root 'imports#index'
   resources :imports, only: [:new, :create]
-  get "/export(/:id)", to: "imports#export", as: :export
-  post "/send_email(/:id)", to: "employees#send_email", as: :send_email
+  post "/export(/:id)", to: "imports#export", as: :export
+  # post "/send_email(/:id)", to: "imports#send_email", as: :send_email
   # get 'employees', to: 'employees#index'
+  post ".send_mail", to: "salaries#send_mail", as: :send_mail
   resources :salaries
 
   # resources :companies do

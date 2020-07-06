@@ -1,22 +1,43 @@
-<p id="notice"><%= notice %></p>
-<%= button_to 'Download a PDF', export_path, method: :get %>
-<%= button_to 'send Email', send_email_path, method: :post %>
+<!-- <p id="notice"><%= notice %></p>
+<%# button_to 'Download a PDF', export_path(salary.id), method: :post %>
+<%# button_to 'send Email', send_email_path, method: :post %>
+<a href="/send_mail">click send mil</a>
 <table>
 	<thead>
 		<th>/</th>
 	</thead>
 	<tbody>
-		<% @salary.each do |salary| %>
+		<%# @salary.each do |salary| %>
 		<tr>
-		<% salary.salary_details.each do |key, value| %>
+		<%# salary.salary_details.each do |key, value| %>
 		<td>
-			<b><%= "#{key}" %></b>
+			<b><%# "#{key}" %></b>
 		</td>
 		<td>
-			<b><%= "#{value}" %></b>
+			<b><%# "#{value}" %></b>
 		</td>
-		<% end %>
+		<%# end %>
 		</tr>
-		<% end %>
+		<%# end %>
 	</tbody>
+</table> -->
+
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @salary.each do |salary| %>
+      <tr>
+        <% salary.salary_details.each do |key, value| %>
+          <td><b><%= "#{key}" %></b></td>
+          <td><%= "#{value}" %></td>
+        <% end %>
+        <td><%= button_to 'Download a PDF', export_path(salary.id), method: :post %></td>
+        <td><%# button_to 'send Email', send_email_path(salary.id), method: :post %></td>
+        <td><%= button_to 'show', salary_path(salary.id), method: :get %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
