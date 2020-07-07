@@ -88,13 +88,13 @@ class ImportsController < ApplicationController
     # file = kit.to_file('./payslip.pdf')
     # send_file file, type: 'application/pdf'
   end
-  def send_email
-  @salar = Salary.find(params[:id])
-  pdf = render_to_string :pdf => 'payslip'
-  Sendpdf.send_report(@Salary, pdf).deliver
-  redirect_to salary_path(@salary)
-  flash[:notice] = 'Email has been sent!'
-end
+#   def send_email
+#   @salar = Salary.find(params[:id])
+#   pdf = render_to_string :pdf => 'payslip'
+#   Sendpdf.send_report(@Salary, pdf).deliver
+#   redirect_to salary_path(@salary)
+#   flash[:notice] = 'Email has been sent!'
+# end
 
   private
 

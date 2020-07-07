@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'nik@complitech.us'
+  default from: 'geeta@complitech.net'
   layout 'mailer'
 end
