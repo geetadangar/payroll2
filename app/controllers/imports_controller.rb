@@ -59,17 +59,6 @@ class ImportsController < ApplicationController
 
 
   def export
-    # id = Company.find_by_id(params[:id])
-    # raise id.inspect
-    # kit = PDFKit.new('http://localhost:3000/companies/#{id}/employees')
-    # kit = PDFKit.new(File.new('employees/index'))
-    
-    # rendered_html = render_to_string("imports/show")
-    # kit = PDFKit.new(rendered_html)
-    # # kit = kit.to_file('employees/index')
-    # pdf = kit.to_pdf
-    # file = kit.to_file('./payslip.pdf')
-    # send_file file, type: 'application/pdf'
 
     # kit = PDFKit.new('http://localhost:3000/salaries')
     # file = kit.to_file('./payslip1.pdf')
