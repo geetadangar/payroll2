@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_075525) do
+ActiveRecord::Schema.define(version: 2020_06_17_045450) do
 
-  create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "cin"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_07_03_075525) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "designation"
     t.string "department"
@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 2020_07_03_075525) do
     t.string "PF"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_id"
     t.string "email"
-    t.bigint "company_id_id"
+    t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
-  create_table "employeesalaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "employeesalaries", force: :cascade do |t|
     t.integer "employee_id", null: false
     t.integer "salary_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -45,21 +46,24 @@ ActiveRecord::Schema.define(version: 2020_07_03_075525) do
     t.index ["salary_id"], name: "index_employeesalaries_on_salary_id"
   end
 
-  create_table "payroll1s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "payroll1s", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "payroll_imports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "payroll_imports", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "file"
   end
 
-  create_table "salaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "salaries", force: :cascade do |t|
     t.text "salary_details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "employees", "companies"
+  add_foreign_key "employeesalaries", "employees"
+  add_foreign_key "employeesalaries", "salaries"
 end
