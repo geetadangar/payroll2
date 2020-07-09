@@ -33,3 +33,11 @@ Note: Only import spreadsheets that were previously downloaded from this
 <% end %>
 
 <%= link_to 'Back', companies_path %>
+
+<%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
+<div class="field">
+    <%= form_tag 'imports_path', multipart: true do %>
+  <label for="file">File to Upload</label> <%= file_field_tag "file" %>
+  <%= submit_tag %>
+<% end %>
+<% end %>

@@ -8,17 +8,40 @@
       <%# raise @company.inspect %>
       <!-- <th>select date</th> -->
       <th>select month</th>
+      <th></th>
       <th>select year</th>
-      <th>upload only excel file</th>
+     <!--  <th>upload only excel file</th> -->
     </tr>
   </thead>
   <tbody>
         <td><%= select_tag "company_id", options_from_collection_for_select(@company, "id", "name") %><%# company.name %></td>
         <%# select_tag "date", options_from_collection_for_select(@company, "created_at", "created_at") %>
         <td><%= select_month(Date.today) %></td>
+        <td></td>
         <td><%= select_year(Date.today, start_year: 1992, end_year: 2007)%></td>
-        <td><%= link_to 'upload excel file ', new_import_path %></td>
-        
+        <td><%# link_to 'upload excel file ', new_import_path %></td>
+        <td>
+<%= form_with(url: imports_path, method: :post, multipart: :true) do |f| %>
+  <% if @payrollimport.errors.any? %>
+    <%= pluralize(@payrollimport.errors.count, "error") %> prevented us from
+
+    importing your spreadsheet. Please update your spreadsheet and try agin.
+    <ul>
+      <%= @payrollimport.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.file_field :file %>
+  <%= f.submit "Import File" %>
+<% end %></td>
  
   </tbody>
+
 </table>
+</br>
+
+
+
+
