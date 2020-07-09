@@ -10,9 +10,8 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use pg as the database for Active Record
  gem 'pg'
 #mysql gem
-# gem 'mysql', '~> 2.9', '>= 2.9.1'
-
-# gem 'mysql2', '~>0.5.2'
+# gem 'mysql'
+# gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
