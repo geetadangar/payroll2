@@ -1,60 +1,214 @@
+<style>
+  body{
+    font-family: arial, sans-serif;
+  }
+  h1{
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  h2{
+    font-weight: normal;
+    margin-top: 50px;
+    color: #2b2b2b;
+  }
+  h4{
+    font-weight: normal;
+    color: #2b2b2b;
+    margin: 0 0 10px 0;
+    font-size:18px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #2b2b2b;
+  }
+  
+  table + table:last-child{
+    border-left: 0;
+  }
 
-<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
-<div style="position:absolute;left:0px;top:0px">
-<img src="/background1.jpg" width="612" height="792"></div>
-<div style="position:absolute;left:182.10px;top:52.20px" class="cls_002"><span class="cls_002">COMPLITECH SOLUTIONS</span></div>
-<div style="position:absolute;left:224.40px;top:74.40px" class="cls_002"><span class="cls_002"></span></div>
-<div style="position:absolute;left:182.40px;top:109.80px" class="cls_003"><span class="cls_003">Parul Nagar Society, Ahmedabad, Gujarat - 380061</span></div>
-<div style="position:absolute;left:228.60px;top:128.40px" class="cls_003"><span class="cls_003">CIN:U72900GJ2007PTC051398</span></div>
-<div style="position:absolute;left:194.40px;top:171.00px" class="cls_004"><span class="cls_004">Payslip for the Month of May, 2018</span></div>
-<div style="position:absolute;left:72.60px;top:205.80px" class="cls_005"><span class="cls_005">Name:</span></div>
-<div style="position:absolute;left:192.00px;top:205.80px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Name"] %></span></div>
-<div style="position:absolute;left:312.00px;top:205.80px" class="cls_005"><span class="cls_005">Employee ID:</span></div>
-<div style="position:absolute;left:431.40px;top:205.80px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Employee ID"] %></span></div>
-<div style="position:absolute;left:72.60px;top:228.60px" class="cls_005"><span class="cls_005">Designation:</span></div>
-<div style="position:absolute;left:192.00px;top:228.60px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Designation"] %></span></div>
-<div style="position:absolute;left:312.00px;top:228.60px" class="cls_005"><span class="cls_005">Bank Name:</span></div>
-<div style="position:absolute;left:431.40px;top:228.60px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Bank A/C No"] %></span></div>
-<div style="position:absolute;left:72.60px;top:251.40px" class="cls_005"><span class="cls_005">Department:</span></div>
-<div style="position:absolute;left:192.00px;top:251.40px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Department"] %></span></div>
-<div style="position:absolute;left:312.00px;top:251.40px" class="cls_005"><span class="cls_005">Bank Account No.:</span></div>
-<div style="position:absolute;left:431.40px;top:251.40px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Bank A/C No"] %></span></div>
-<div style="position:absolute;left:72.60px;top:274.20px" class="cls_005"><span class="cls_005">Location:</span></div>
-<div style="position:absolute;left:192.00px;top:274.20px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["location"] %></span></div>
-<div style="position:absolute;left:312.00px;top:274.20px" class="cls_005"><span class="cls_005">PAN No.:</span></div>
-<div style="position:absolute;left:431.40px;top:274.20px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["PAN"] %></span></div>
-<div style="position:absolute;left:72.60px;top:297.00px" class="cls_005"><span class="cls_005">Effective Work Day:</span></div>
-<div style="position:absolute;left:192.00px;top:297.00px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Present Days"] %></span></div>
-<div style="position:absolute;left:312.00px;top:297.00px" class="cls_005"><span class="cls_005">PF No.:</span></div>
-<div style="position:absolute;left:431.40px;top:297.00px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["PF Number"] %></span></div>
-<div style="position:absolute;left:72.60px;top:319.80px" class="cls_005"><span class="cls_005">LOP:</span></div>
-<div style="position:absolute;left:192.00px;top:319.80px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["LIC"] %></span></div>
-<div style="position:absolute;left:72.60px;top:361.80px" class="cls_006"><span class="cls_006">Earnings</span></div>
-<div style="position:absolute;left:260.40px;top:361.80px" class="cls_006"><span class="cls_006">Amount</span></div>
-<div style="position:absolute;left:309.00px;top:361.80px" class="cls_006"><span class="cls_006">Deductions</span></div>
-<div style="position:absolute;left:503.40px;top:361.80px" class="cls_006"><span class="cls_006">Amount</span></div>
-<div style="position:absolute;left:72.60px;top:385.20px" class="cls_005"><span class="cls_005">Basic</span></div>
-<div style="position:absolute;left:267.00px;top:385.20px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["Basic for PF"] %></span></div>
-<div style="position:absolute;left:309.00px;top:385.20px" class="cls_005"><span class="cls_005">PF</span></div>
-<div style="position:absolute;left:517.80px;top:385.20px" class="cls_005"><span class="cls_005"><%= @salary.salary_details["PF"] %></td></span></div>
-<div style="position:absolute;left:72.60px;top:408.00px" class="cls_005"><span class="cls_005">Basic</span></div>
-<div style="position:absolute;left:267.00px;top:408.00px" class="cls_005"><span class="cls_005">43,333</span></div>
-<div style="position:absolute;left:309.00px;top:408.00px" class="cls_005"><span class="cls_005">PF</span></div>
-<div style="position:absolute;left:517.80px;top:408.00px" class="cls_005"><span class="cls_005">5200</span></div>
-<div style="position:absolute;left:72.60px;top:430.80px" class="cls_005"><span class="cls_005">Basic</span></div>
-<div style="position:absolute;left:267.00px;top:430.80px" class="cls_005"><span class="cls_005">43,333</span></div>
-<div style="position:absolute;left:309.00px;top:430.80px" class="cls_005"><span class="cls_005">PF</span></div>
-<div style="position:absolute;left:517.80px;top:430.80px" class="cls_005"><span class="cls_005">5200</span></div>
-<div style="position:absolute;left:72.60px;top:453.60px" class="cls_005"><span class="cls_005">Basic</span></div>
-<div style="position:absolute;left:267.00px;top:453.60px" class="cls_005"><span class="cls_005">43,333</span></div>
-<div style="position:absolute;left:72.60px;top:477.00px" class="cls_006"><span class="cls_006">Total Earnings (Rs)</span></div>
-<div style="position:absolute;left:259.20px;top:477.00px" class="cls_006"><span class="cls_006"><%= @salary.salary_details["Gross Total"] %></span></div>
-<div style="position:absolute;left:309.00px;top:477.00px" class="cls_006"><span class="cls_006">Total Deductions (Rs)</span></div>
-<div style="position:absolute;left:510.00px;top:477.00px" class="cls_006"><span class="cls_006"><%= @salary.salary_details["Total Deductions"] %></span></div>
-<div style="position:absolute;left:72.00px;top:500.40px" class="cls_005"><span class="cls_005">Net Pay for the Month:</span></div>
-<div style="position:absolute;left:267.00px;top:500.40px" class="cls_006"><span class="cls_006"><%= @salary.salary_details["Net Amount"] %></span></div>
-<div style="position:absolute;left:66.00px;top:535.20px" class="cls_007"><span class="cls_007">(Rupees Eighty Five Thousand And One Hundred and Two Only</span></div>
+  td, th {
+    text-align: left;
+    padding: 10px;
+  }
+  
+</style>
+<div style="width:800px; margin: 0 auto; text-align: center;">
+  <!-- Header Content -->
+  <h1>
+    COMPLITECH SOLUTIONS PRIVATE LIMITED
+  </h1>
+  <h4>Address: 303, Sarvopari Mall, Near Bhuyangdev, Dharati Cross Road, Sola Rd, Ahmedabad, Gujarat 380061</h4>
+  <h4>CIN:U72900GJ2007PTC051398</h4>
+
+  <h2>Payslip for the Month of </h2>
+  <!-- Table 1 Content -->
+  <table style="margin-bottom: 30px;">
+    <tbody>
+      <tr>
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr>
+              <td>Name:</td>
+              <td><%= @salary.salary_details["Name"] %></td>
+            </tr>
+            <tr>
+              <td>Designation:</td>
+              <td><%= @salary.salary_details["Designation"] %></td>
+            </tr>
+            <tr>
+              <td>Department:</td>
+              <td><%= @salary.salary_details["Department"] %></td>
+            </tr>
+            <tr>
+              <td>Effective Work Days:</td>
+              <td><%= @salary.salary_details["Effective Work Days"] %></td>
+            </tr>
+            <tr>
+              <td>Present Days:</td>
+              <td><%= @salary.salary_details["Present Days"] %> </td>
+            </tr>
+          </table>
+        </td>
+
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr>
+              <td>Employee ID:</td>
+              <td><%= @salary.salary_details["Employee ID"] %></td>
+            </tr>
+            <tr>
+              <td>Mode of payment:</td>
+              <td><%= @salary.salary_details["Mode of Payment"] %></td>
+            </tr>
+            <tr>
+              <td>Bank Account No.:</td>
+              <td><%= @salary.salary_details["Bank A/C No"] %></td>
+            </tr>
+            <tr>
+              <td>PAN No.:</td>
+              <td><%= @salary.salary_details["PAN"] %></td>
+            </tr>
+            <tr>
+              <td>PF No.:</td>
+              <td><%= @salary.salary_details["PF Number"] %></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <!-- Table 2 Content -->
+  <table>
+    <tbody>
+      <tr>
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr style="border-bottom: 1px solid #2b2b2b;">
+              <th>Earnings</th>
+              <th style="text-align:right">Amount</th>
+            </tr>
+            <tr>
+              <td>Basic</td>
+              <td style="text-align:right"><%= @salary.salary_details["basic of"] %></td>
+            </tr>
+            <tr>
+              <td>Other Basic</td>
+              <td style="text-align:right"><%= @salary.salary_details["Other Basic"] %> </td>
+            </tr>
+            <tr>
+              <td>HRA</td>
+              <td style="text-align:right"><%= @salary.salary_details["HRA"] %></td>
+            </tr>
+            <tr>
+              <td>Incentives</td>
+              <td style="text-align:right"><%= @salary.salary_details["Incentives"] %></td>
+            </tr>
+            <tr>
+              <td>Leave Encashment</td>
+              <td style="text-align:right"><%= @salary.salary_details["Leave Encashment"] %></td>
+            </tr>
+            <tr>
+              <td>LIC</td>
+              <td style="text-align:right"><%= @salary.salary_details["LIC"] %></td>
+            </tr>
+            
+            
+          </table>
+        </td>
+
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table style="table-layout: fixed;">
+            <tr style="border-bottom: 1px solid #2b2b2b;">
+              <th>Deductions</th>
+              <th style="text-align:right"><%= @salary.salary_details["HRA"] %>Amount</th>
+            </tr>
+            <tr>
+              <td>PF</td>
+              <td style="text-align:right"><%= @salary.salary_details["PF"] %></td>
+            </tr>
+            <tr>
+              <td>ESIC</td>
+              <td style="text-align:right"><%= @salary.salary_details["ESIC"] %></td>
+            </tr>
+            <tr>
+              <td>PT</td>
+              <td style="text-align:right"><%= @salary.salary_details["PT"] %></td>
+            </tr>
+            <tr>
+              <td>TDS</td>
+              <td style="text-align:right"><%= @salary.salary_details["TDS"] %></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table>
+            <tr>
+              <th>Total Earnings (Rs)</th>
+              <th style="text-align:right"><%= @salary.salary_details["Gross Total"] %></th>
+            </tr>
+          </table>
+        </td>
+
+        <td valign="top" style="border: 1px solid #2b2b2b; padding: 0;">
+          <table>
+            <tr>
+              <th>Total Deductions (Rs)</th>
+              <th style="text-align:right"><%= @salary.salary_details["Total Deductions"] %></th>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding: 0;">
+          <table>
+            <tr>
+              <td>Net Pay for the Month:</td>
+              <th style="text-align:right"><%= @salary.salary_details["Net Amount"] %></th>
+            </tr>
+          </table>
+        </td>
+        <td style="padding: 0;">
+         <!--  <table>
+            <tr>
+              <td colspan="2" style="font-style: italic;">(Rupees <%# salary.salary_details["Amount in Words"] %>)</td>
+            </tr>
+          </table> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table style="margin-top: 30px; border-top: 1px solid #2b2b2b;">
+    <tr>
+      <td style="padding: 10px 0;font-style: italic;">This is a computer generated payslip. No signature is required.</td>
+    </tr>
+  </table>
+
 </div>
-
-
- 
