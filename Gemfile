@@ -72,6 +72,9 @@ ruby '2.7.0'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
+#devise gem
+
+gem 'devise'
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
