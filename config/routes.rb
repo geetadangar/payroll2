@@ -1,4 +1,7 @@
 # Rails.application.routes.draw do
+  
+  # devise_for :users
+  # devise_for :users
 #   root 'companies#index'
 #   resources :imports, only: [:new, :create]
 #   get "/export(/:id)", to: "imports#export", as: :export
@@ -8,6 +11,10 @@
 #   end
 # end
 Rails.application.routes.draw do
+  # devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", passwords: "users/passwords" }
+
+  # devise_for :users
   root 'imports#index'
   resources :imports, only: [:new, :create]
   post "/export(/:id)", to: "imports#export", as: :export
