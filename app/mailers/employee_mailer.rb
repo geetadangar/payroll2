@@ -29,7 +29,7 @@ class EmployeeMailer < ApplicationMailer
     @salary = salary
     attachments['payslip.pdf'] = pdf.to_pdf
     # mail(to: @email, subject: 'welcome to payslip.')
-    mail(to: "nik@complitech.us", from:"geeta@complitech.net", subject: "testingmail",message: "hiii")
+    mail(to: "geetadangar999@gmail.com", from:"geetadangar999@gmail.com", subject: "testingmail",message: "hiii")
 
   end
 end
